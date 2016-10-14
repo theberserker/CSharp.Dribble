@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Dribble.Pluralsight.Functional", "CSharp.Dribble.Pluralsight.Functional\CSharp.Dribble.Pluralsight.Functional.csproj", "{4CC9906F-3B39-4419-A3C0-3CAA1F534C1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Dribble.Pluralsight", "CSharp.Dribble.Pluralsight\CSharp.Dribble.Pluralsight.csproj", "{F181A622-D6E1-41B4-B900-FBEF99769771}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4CC9906F-3B39-4419-A3C0-3CAA1F534C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CC9906F-3B39-4419-A3C0-3CAA1F534C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CC9906F-3B39-4419-A3C0-3CAA1F534C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CC9906F-3B39-4419-A3C0-3CAA1F534C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F181A622-D6E1-41B4-B900-FBEF99769771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F181A622-D6E1-41B4-B900-FBEF99769771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F181A622-D6E1-41B4-B900-FBEF99769771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F181A622-D6E1-41B4-B900-FBEF99769771}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

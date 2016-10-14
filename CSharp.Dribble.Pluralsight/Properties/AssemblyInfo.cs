@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CSharp.Dribble.Pluralsight.Functional")]
+[assembly: AssemblyTitle("CSharp.Dribble.Pluralsight")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CSharp.Dribble.Pluralsight.Functional")]
+[assembly: AssemblyProduct("CSharp.Dribble.Pluralsight")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4cc9906f-3b39-4419-a3c0-3caa1f534c1e")]
+[assembly: Guid("f181a622-d6e1-41b4-b900-fbef99769771")]
 
 // Version information for an assembly consists of the following four values:
 //
