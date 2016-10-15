@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +63,7 @@ namespace CSharp.Dribble.Pluralsight.Functional
         }
 
         // Also use the Map 
+        // and Tee to Console
         public string Invoke3()
         {
             var selectBox =
@@ -72,18 +74,27 @@ namespace CSharp.Dribble.Pluralsight.Functional
                     .Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
                     .Select((s, ix) => Tuple.Create(ix, s))
                     .ToDictionary(k => k.Item1, v => v.Item2)
-                    .Map(kvp => BuildSelectBox(kvp, "TheDoctors", true));
+                    .Map(kvp => BuildSelectBox(kvp, "TheDoctors", true))
+                    .Tee(Console.WriteLine);
 
             return selectBox;
         }
 
         public string BuildSelectBox(IDictionary<int, string> options, string id, bool includeUnknown)
         {
-            var sb = new StringBuilder()
-                .AppendFormattedLine("append formatted {0}", "line")
+            var result = new StringBuilder()
+                .AppendFormattedLine("<select id='{0}' name='{0}'>, id")
+                .AppendWhen(
+                    () => includeUnknown,
+                    sb => sb.AppendLine("\t<option>Unknown</option>"))
+                .AppendSequence(
+                    options,
+                    (sb , opt) => 
+                        sb.AppendFormattedLine($"\t<option> value='{opt.Key}'>{opt.Value}</option>"))
+                .AppendLine()
                 .ToString();
 
-            return sb;
+            return result;
         }
     }
 }
