@@ -1,6 +1,7 @@
 ﻿using CSharp.Dribble.Exam70483.Threading;
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace CSharp.Dribble.Exam70483
 {
@@ -10,7 +11,13 @@ namespace CSharp.Dribble.Exam70483
         {
             //ThreadBasics2.MainMethod();
             //TaskBasics2.WaitAny();
-            ParallelBasics.TerminatingAParallel();
+            //ParallelBasics.TerminatingAParallel();
+            //ConcurrentCollections.BlockingCollectionUsage2();
+            //Enumerating.RemovalOfItemThrows();
+            //ThreadingManagement.DeadlockSample_Book();
+            ThreadingManagement.TaskCancellation();
+
+
             Console.ReadKey();
         }
     }

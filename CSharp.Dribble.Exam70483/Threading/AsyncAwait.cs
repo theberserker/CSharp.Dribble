@@ -1,25 +1,28 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 
 namespace CSharp.Dribble.Exam70483.Threading
 {
     /// <summary>
-    /// The SleepAsyncA method uses a thread from the thread pool while sleeping. 
-    /// The second method, however, which has a completely different implementation, does not occupy a thread while waiting for the timer to run.The second method gives you scalability
+    /// If you want, you can disable the flow of the SynchronizationContext. Maybe your continuation
+    /// code can run on any thread because it doesn’t need to update the UI after it’s finished.
+    /// By disabling the SynchronizationContext, your code performs better. Listing 1-20 shows an
+    /// example of a button event handler in a WPF application that downloads a website and then
+    /// puts the result in a label.
     /// </summary>
     public static class AsyncAwait
     {
-        public Task SleepAsyncA(int millisecondsTimeout)
-        {
-            return Task.Run(() => Thread.Sleep(millisecondsTimeout));
-        }
+        //private async void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    HttpClient httpClient = new HttpClient();
+        //    string content = await httpClient
+        //        .GetStringAsync("http://www.microsoft.com")
 
-        public Task SleepAsyncB(int millisecondsTimeout)
-        {
-            TaskCompletionSource<bool> tcs = null;
-            var t = new Timer(delegate { tcs.TrySetResult(true); }, null, -1, -1);
-            tcs = new TaskCompletionSource<bool>(t);
-            t.Change(millisecondsTimeout, -1);
-            return tcs.Task;
-        }
+        //    .ConfigureAwait(false);
+
+
+        //// This example throws an exception; the Output.Content line is not executed on the UI thread because of the ConfigureAwait(false). 
+        //    Output.Content = content;
+        //}
     }
 }
