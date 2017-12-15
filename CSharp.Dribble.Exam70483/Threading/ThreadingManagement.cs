@@ -133,5 +133,72 @@ namespace CSharp.Dribble.Exam70483.Threading
             Task.WaitAll(t1, t2);
             Console.WriteLine(value); // Displays 2
         }
+
+        /// <summary>
+        /// The CancellationToken is used in the asynchronous Task. The CancellationTokenSource is used to signal that the Task should cancel itself.
+        /// In this case, the operation will just end when cancellation is requested. Outside users of the Task won’t see anything different because the Task will just have a RanToCompletion state.
+        /// </summary>
+        public static void TaskCancellation()
+        {
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+            CancellationToken token = cancellationTokenSource.Token;
+            Task task = Task.Run(() =>
+            {
+                while (!token.IsCancellationRequested)
+                {
+                    Console.Write("*");
+                    Thread.Sleep(1000);
+                }
+            }, token);
+
+            Console.WriteLine("Press enter to stop the task");
+            Console.ReadLine();
+            cancellationTokenSource.Cancel();
+        }
+
+        /// <summary>
+        /// If you want to signal to outside users that your task has been canceled, you can do this by throwing an OperationCanceledException.
+        /// </summary>
+        public static void A()
+        {
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+            CancellationToken token = cancellationTokenSource.Token;
+            Task task = Task.Run(() =>
+            {
+                while (!token.IsCancellationRequested)
+                {
+                    Console.Write("*");
+                    Thread.Sleep(1000);
+                }
+                token.ThrowIfCancellationRequested();
+            }, token);
+
+            try
+            {
+                Console.WriteLine("Press enter to stop the task.");
+                Console.ReadLine();
+                cancellationTokenSource.Cancel();
+                task.Wait();
+            }
+            catch (AggregateException e)
+            {
+                Console.WriteLine(e.InnerExceptions[0].Message);
+            }
+        }
+
+        /// <summary>
+        /// If the returned index is -1, the task timed out. It’s important to check for any possible errors on the other tasks.
+        /// If you don’t catch them, they will go unhandled.
+        /// </summary>
+        public static void SetTaskTimeout()
+        {
+            Task longRunning = Task.Run(() =>
+            {
+                Thread.Sleep(10000);
+            });
+            int index = Task.WaitAny(new[] { longRunning }, 1000);
+            if (index == -1)
+                Console.WriteLine("Task timed out");
+        }
     }
 }

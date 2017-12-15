@@ -15,8 +15,9 @@ namespace CSharp.Dribble.Exam70483
             //ConcurrentCollections.BlockingCollectionUsage2();
             //Enumerating.RemovalOfItemThrows();
             //ThreadingManagement.DeadlockSample_Book();
-            ThreadingManagement.TaskCancellation();
+            //ThreadingManagement.A();
 
+            ExceptionHandling.FailFast();
 
             Console.ReadKey();
         }
