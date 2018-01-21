@@ -19,8 +19,8 @@ namespace CSharp.Dribble.Exam70483.Encryption
                 //string publicKeyXML = rsa.ToXmlString(false);
                 //string privateKeyXML = rsa.ToXmlString(true);
 
-                Console.WriteLine(publicKeyXML);
-                Console.WriteLine(privateKeyXML);
+                //Console.WriteLine(publicKeyXML);
+                //Console.WriteLine(privateKeyXML);
             }
         }
     }
