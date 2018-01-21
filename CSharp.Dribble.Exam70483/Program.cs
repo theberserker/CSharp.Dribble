@@ -1,4 +1,6 @@
-﻿using CSharp.Dribble.Exam70483.Threading;
+﻿using CSharp.Dribble.Exam70483.Encryption;
+using CSharp.Dribble.Exam70483.Threading;
+using CSharp.Dribble.Exam70483.Validation;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,7 +19,11 @@ namespace CSharp.Dribble.Exam70483
             //ThreadingManagement.DeadlockSample_Book();
             //ThreadingManagement.A();
 
-            ExceptionHandling.FailFast();
+            //ExceptionHandling.FailFast();
+
+            //Parsing.CultureSpecific();
+
+            Symetric.EncryptSomeText();
 
             Console.ReadKey();
         }
