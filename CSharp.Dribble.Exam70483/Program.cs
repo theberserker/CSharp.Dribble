@@ -1,4 +1,7 @@
-﻿using CSharp.Dribble.Exam70483.Encryption;
+﻿using CSharp.Dribble.Exam70483.CreateAndUseTypes;
+using CSharp.Dribble.Exam70483.Diagnostics;
+using CSharp.Dribble.Exam70483.Encryption;
+using CSharp.Dribble.Exam70483.Serialization;
 using CSharp.Dribble.Exam70483.Threading;
 using CSharp.Dribble.Exam70483.Validation;
 using System;
@@ -14,6 +17,7 @@ namespace CSharp.Dribble.Exam70483
             //ThreadBasics2.MainMethod();
             //TaskBasics2.WaitAny();
             //ParallelBasics.TerminatingAParallel();
+            ConcurrentCollections.BlockingCollectionUsage();
             //ConcurrentCollections.BlockingCollectionUsage2();
             //Enumerating.RemovalOfItemThrows();
             //ThreadingManagement.DeadlockSample_Book();
@@ -23,7 +27,22 @@ namespace CSharp.Dribble.Exam70483
 
             //Parsing.CultureSpecific();
 
-            Symetric.EncryptSomeText();
+            //Symetric.EncryptSomeText();
+
+            //BuildConfigurationDifferences.DoWork();
+
+            //Tracing.DoTrace();
+
+            //ObjectInheritanceToXmlAndBack.Do();
+
+            //XmlDataContract.Do();
+            //XmlDataContract.DoJson();
+
+            //var a = new InstantiationSequence(1);
+
+            //OverflowChecking.CheckedThrows();
+
+            PerfCounters.DoSample();
 
             Console.ReadKey();
         }

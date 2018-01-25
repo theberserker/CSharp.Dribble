@@ -16,6 +16,7 @@ namespace CSharp.Dribble.Exam70483.Threading
         public static void BlockingCollectionUsage()
         {
             BlockingCollection<string> col = new BlockingCollection<string>();
+
             Task read = Task.Run(() =>
             {
                 while (true)
@@ -36,7 +37,7 @@ namespace CSharp.Dribble.Exam70483.Threading
         }
 
         /// <summary>
-        /// Same as <see cref="BlockingCollectionUsage"/>, but with removed the while(true) statements...
+        /// Same as <see cref="BlockingCollectionUsage"/>, but with removed the while(true) statement...
         /// By using the GetConsumingEnumerable method, you get an IEnumerable that blocks until it finds a new item. 
         /// That way, you can use a foreach with your BlockingCollection to enumerate it.
         /// </summary>

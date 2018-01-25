@@ -1,0 +1,1 @@
+<PersonDataContract xmlns="http://schemas.datacontract.org/2004/07/CSharp.Dribble.Exam70483.Serialization" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Id>1</Id><Name>JohnDoe</Name></PersonDataContract>
