@@ -49,7 +49,7 @@ namespace CSharp.Dribble.Exam70483.LanguageFeatures
             // Catches and handles only non sql exceptions
             catch (Exception exception) when (exception.GetType() != typeof(OrderProcessingException))
             {
-                // 2 features used here: using an earlier imported static class, and string interpolation.
+                // string interpolation
                 WriteLine($"Some other exception than {nameof(OrderProcessingException)} has occoured: {exception}");
             }
         }

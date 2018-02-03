@@ -29,4 +29,35 @@ namespace CSharp.Dribble.Exam70483.Assorted
             throw new NotImplementedException();
         }
     }
+
+    class MyClass<T> : IComparable<T>
+    {
+        public int CompareTo(T other)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class MyClass : IComparable
+    {
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class MyClass2 : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    class MyClass2<T> : IComparer<T>
+    {
+        public int Compare(T x, T y)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

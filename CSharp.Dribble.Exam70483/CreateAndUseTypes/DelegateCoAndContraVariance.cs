@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -48,7 +50,7 @@ namespace CSharp.Dribble.Exam70483.CreateAndUseTypes
 
     public class TestBase
     {
-        public event EventHandler EventName;
+        public event EventHandler EventName;    
 
         protected void OnEvent()
         {
@@ -66,7 +68,7 @@ namespace CSharp.Dribble.Exam70483.CreateAndUseTypes
 
             // THIS WON'T WORK! You can't invoke inherited event directly
             //if (base.EventName != null) 
-                //base.EventName(this, args);
+            //base.EventName(this, args);
         }
     }
 }
